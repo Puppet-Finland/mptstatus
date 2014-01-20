@@ -1,4 +1,4 @@
 mptstatus
 =========
 
-A Puppet module for managing mpt-status
+A puppet module for managing mpt-status (raid status monitor)
