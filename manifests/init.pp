@@ -13,9 +13,9 @@
 #
 # == Examples
 #
-# class { 'mptstatus':
-#   status => 'absent',
-# }
+#   class { 'mptstatus':
+#       status => 'absent',
+#   }
 #
 # == Authors
 #
@@ -23,8 +23,7 @@
 #
 # == License
 #
-# BSD-lisence
-# See file LICENSE for details
+# BSD-license. See file LICENSE for details.
 #
 class mptstatus
 (
