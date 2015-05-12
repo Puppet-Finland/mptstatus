@@ -7,14 +7,16 @@
 #
 # == Parameters
 #
-# [*status*]
+# [*manage*]
+#   Manage mpt-status with Puppet. Valid values are 'yes' (default) and 'no'.
+# [*ensure*]
 #   Status of the mpt-status package. Either 'present' or 'absent'. Defaults to 
 #   'present'.
 #
 # == Examples
 #
 #   class { 'mptstatus':
-#       status => 'absent',
+#       ensure => 'absent',
 #   }
 #
 # == Authors
@@ -27,15 +29,15 @@
 #
 class mptstatus
 (
-    $status='present'
+    $manage = 'yes',
+    $ensure = 'present'
 )
 {
 
-# Rationale for this is explained in init.pp of the sshd module
-if hiera('manage_mptstatus', 'true') != 'false' {
+if $manage == 'yes' {
 
-    class { 'mptstatus::install':
-        status => $status,
+    class { '::mptstatus::install':
+        ensure => $ensure,
     }
 }
 }
